@@ -1,5 +1,9 @@
+# Пример использования:
+source_file = "source.txt"
+destination_file = "destination.txt"
+line_number = int(input("Введите номер строки для копирования: "))
+copy_line_to_another_file(source_file, destination_file, line_number)
 
-# ```python
 def copy_line_to_another_file(source_file, destination_file, line_number):
     try:
         with open(source_file, 'r') as src_file:
@@ -18,9 +22,4 @@ def copy_line_to_another_file(source_file, destination_file, line_number):
     except Exception as e:
         print(f"Произошла ошибка: {e}")
 
-# Пример использования:
-source_file = "source.txt"
-destination_file = "destination.txt"
-line_number = int(input("Введите номер строки для копирования: "))
-copy_line_to_another_file(source_file, destination_file, line_number)
-# ```
+
