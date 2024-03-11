@@ -1,0 +1,26 @@
+
+# ```python
+def copy_line_to_another_file(source_file, destination_file, line_number):
+    try:
+        with open(source_file, 'r') as src_file:
+            lines = src_file.readlines()
+            if 1 <= line_number <= len(lines):
+                line_to_copy = lines[line_number - 1]
+
+                with open(destination_file, 'a') as dest_file:
+                    dest_file.write(line_to_copy)
+                print(f"Строка {line_number} успешно скопирована в {destination_file}.")
+            else:
+                print("Неверный номер строки.")
+
+    except FileNotFoundError:
+        print("Файл не найден.")
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
+
+# Пример использования:
+source_file = "source.txt"
+destination_file = "destination.txt"
+line_number = int(input("Введите номер строки для копирования: "))
+copy_line_to_another_file(source_file, destination_file, line_number)
+# ```
